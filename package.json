@@ -1,0 +1,55 @@
+{
+  "name": "t-swap",
+  "version": "1.0.0",
+  "description": "Swap Extends Parameters",
+  "homepage": "https://github.com/kahirokunn/t-swap",
+  "bugs": "https://github.com/kahirokunn/t-swap/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kahirokunn/t-swap.git"
+  },
+  "license": "MIT",
+  "author": "kahirokunn",
+  "typings": "src/index.d.ts",
+  "scripts": {
+    "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}' --cache --max-warnings=0",
+    "lint:fix": "npm run prettier && npm run lint -- --fix",
+    "prettier": "prettier '**/*.{js,jsx,ts,tsx,json}' --write",
+    "publish": ""
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.json": [
+      "prettier --write"
+    ],
+    "*.{js,jsx,ts,tsx}": [
+      "prettier --write",
+      "eslint --fix"
+    ],
+    "*.{yml,yaml}": [
+      "prettier --write"
+    ],
+    "package.json": [
+      "sort-package-json"
+    ]
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.11.0",
+    "@typescript-eslint/parser": "^4.11.0",
+    "eslint": "^7.16.0",
+    "eslint-config-prettier": "^7.1.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-prettier": "^3.3.0",
+    "eslint-plugin-simple-import-sort": "^7.0.0",
+    "eslint-plugin-unicorn": "^24.0.0",
+    "husky": "^4.3.6",
+    "lint-staged": "^10.5.3",
+    "prettier": "^2.2.1",
+    "sort-package-json": "^1.48.0",
+    "typescript": "^4.1.3"
+  }
+}
